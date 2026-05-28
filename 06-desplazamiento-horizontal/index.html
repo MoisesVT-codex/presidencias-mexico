@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Desplazamiento horizontal</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="portada">
+      <p class="etiqueta">Siglo XX en México</p>
+      <h1>Ya me cayó el 20 </h1>
+      <p class="bajada">
+        En México se dice "ya me cayó el 20" para comunicar comprensión de algo. Desliza el cursos (moneda de 20 centavos) hacia abajo y la historia continuará en su flujo lateral...
+        <p class="meta">Moisés Villaseñor Talavera </p>
+    </header>
+
+    <main>
+      <section class="intro">
+        <p class="lead">
+          La historia de México es la historia de las luchas por emanciparse económica y culturalmente de la imposición hegemónica <p>
+        </p>
+      </section>
+
+      <section class="recorrido" id="recorrido" aria-label="Relato con desplazamiento horizontal">
+        <div class="visor">
+          <div class="barra">
+            <span id="progreso"></span>
+          </div>
+
+          <div class="pista" id="pista">
+            <article class="panel panel-inicio">
+              <p class="etiqueta">Inicio</p>
+              <h2>Presentar el punto de partida</h2>
+              <p>
+                Abre el recorrido con una pregunta clara. Antes de avanzar, explica qué se compara y por qué el orden de los paneles importa.
+              </p>
+              <iframe
+              src="https://graphcommons.com/graphs/241be8bd-85a2-4905-9eb2-c1b898e0e6ca"
+              allowfullscreen
+              style="width: 100%; height: 100%; border: 0; display: block; min-height: 300px;"
+              title="Graph Commons"
+            ></iframe>
+              <div class="visual linea-tiempo" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </article>
+
+            <article class="panel panel-dato">
+              <p class="etiqueta">Estación 1</p>
+              <h2>Primer cambio visible</h2>
+              <p>
+                Usa este panel para mostrar el primer giro de la historia: una subida, una concentración, una ausencia o una diferencia territorial.
+              </p>
+              <iframe
+                src="https://graphcommons.com/graphs/241be8bd-85a2-4905-9eb2-c1b898e0e6ca"
+                allowfullscreen
+                style="width: 100%; height: 100%; border: 0; display: block; min-height: 300px;"
+                title="Graph Commons"
+              ></iframe>
+                <div class="visual barras" aria-hidden="true">
+                <span style="--alto: 36%"></span>
+                <span style="--alto: 54%"></span>
+                <span style="--alto: 78%"></span>
+                <span style="--alto: 48%"></span>
+              </div>
+            </article>
+
+            <article class="panel panel-mapa">
+              <p class="etiqueta">Estación 2</p>
+              <h2>Comparar lugares o grupos</h2>
+              <p>
+                El recorrido lateral permite sostener una misma pregunta mientras cambian los casos. Aquí puedes reemplazar la ilustración por un mapa o un gráfico.
+              </p>
+              <div class="visual mapa" aria-hidden="true">
+                <span class="zona zona-a"></span>
+                         <span class="zona zona-b"></span>
+                <span class="punto punto-a"></span>
+                <span class="punto punto-b"></span>
+                <span class="punto punto-c"></span>
+              </div>
+            </article>
+
+            <article class="panel panel-detalle">
+              <p class="etiqueta">Estación 3</p>
+              <h2>Detenerse en un caso</h2>
+              <p>
+                Después de comparar, acerca la lectura. Un panel de detalle ayuda a explicar una excepción, una historia local o una consecuencia concreta.
+              </p>
+              <div class="visual detalle" aria-hidden="true">
+                <strong>68%</strong>
+                <span>caso destacado</span>
+              </div>
+            </article>
+
+            <article class="panel panel-cierre">
+              <p class="etiqueta">Cierre</p>
+              <h2>Dejar una conclusión</h2>
+              <p>
+                Cierra el recorrido con una idea que conecte todos los paneles. Explica qué cambió en la lectura después de moverse por la secuencia.
+              </p>
+              <div class="visual cierre-visual" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="nota-final">
+        <img src="moneda.png" class="moneda">
+        <p class="etiqueta">Sugerencia</p>
+        <h2>Cuándo usar esta plantilla</h2>
+        <p>
+          Úsala cuando la estructura lateral aporte sentido: cronologías, rutas, antes/después, secuencias de decisiones o comparaciones que necesitan verse como un recorrido.
+        </p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
