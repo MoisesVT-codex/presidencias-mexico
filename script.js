@@ -28,3 +28,16 @@ function actualizarRecorrido() {
 window.addEventListener("scroll", actualizarRecorrido, { passive: true });
 window.addEventListener("resize", actualizarRecorrido);
 actualizarRecorrido();
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+
+document.querySelectorAll('.foto').forEach(img => {
+  img.addEventListener('click', () => {
+    lightbox.style.display = 'flex';
+    lightboxImg.src = img.src;
+  });
+});
+
+lightbox.addEventListener('click', () => {
+  lightbox.style.display = 'none';
+});

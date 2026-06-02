@@ -342,3 +342,48 @@ h1 {
 *{
   cursor: url("moneda_32x32.png"), auto;
 }
+.galeria {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.galeria img {
+  width: 250px;
+}
+.ampliable {
+  width: 300px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.ampliable:hover {
+  transform: scale(1.05);
+}
+
+.ampliable.activa {
+  transform: scale(2);
+  z-index: 1000;
+}
+.foto {
+  width: 300px;
+  cursor: pointer;
+}
+
+#lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
