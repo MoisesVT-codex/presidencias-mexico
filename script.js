@@ -280,3 +280,26 @@ selectorPelis.addEventListener(
   e => actualizarPelis(e.target.value)
 );
 actualizarPelis(pelis[0].Periodo);
+const imagenes = [
+  "img/ejemplo1.jpg",
+  "img/ejemplo2.jpg",
+  "img/ejemplo3.jpg"
+];
+
+let indice = 0;
+
+const foto = document.getElementById("fotoCarrusel");
+
+document.getElementById("siguiente").addEventListener("click", () => {
+  indice = (indice + 1) % imagenes.length;
+  foto.src = imagenes[indice];
+});
+
+document.getElementById("anterior").addEventListener("click", () => {
+  indice = (indice - 1 + imagenes.length) % imagenes.length;
+  foto.src = imagenes[indice];
+});
+setInterval(() => {
+  indice = (indice + 1) % imagenes.length;
+  foto.src = imagenes[indice];
+}, 5000);
