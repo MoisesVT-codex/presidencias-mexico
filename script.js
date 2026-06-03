@@ -41,3 +41,63 @@ document.querySelectorAll('.foto').forEach(img => {
 lightbox.addEventListener('click', () => {
   lightbox.style.display = 'none';
 });
+fetch("presidencia.json")
+  .then(response => response.json())
+  .then(datos => {
+
+    console.log("JSON cargado");
+    console.log(datos);
+    console.log(datos[0]);
+    console.log(Object.keys(datos[0]));
+    
+    console.log(Object.values(datos[0]));
+
+
+
+    console.log(datos);
+    console.log(datos[0]);
+    const select = document.getElementById("presidenteSelect");
+    const info = document.getElementById("infoPresidente");
+
+    // Llenar el menú
+    datos.forEach((fila, indice) => {
+
+
+      const option = document.createElement("option");
+
+      option.value = indice;
+      option.textContent = fila.A;
+
+      select.appendChild(option);
+    });
+
+    // Mostrar datos cuando elijan un presidente
+    select.addEventListener("change", () => {
+
+      const fila = datos[select.value];
+
+      if (!fila) {
+        info.innerHTML = "";
+        return;
+      }
+
+      let html = "<h2>" + fila.A + "</h2>";
+
+      Object.entries(fila).forEach(([columna, valor]) => {
+
+        if (columna !== "Presidente") {
+
+          html += `
+            <p>
+              <strong>${columna}:</strong>
+              ${valor}
+            </p>
+          `;
+        }
+      });
+
+      info.innerHTML = html;
+
+    });
+
+  });

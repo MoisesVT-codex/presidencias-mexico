@@ -387,3 +387,16 @@ h1 {
   max-width: 90%;
   max-height: 90%;
 }
+#infoPresidente {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+select {
+  padding: 8px;
+  font-size: 16px;
+  color: black;
+  background-color: white;
+}
