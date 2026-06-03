@@ -101,3 +101,67 @@ fetch("presidencia.json")
     });
 
   });
+
+  const datos = [
+    {
+      "Presidente":"Años 50",
+      "Periodo":"Años 50",
+      "Porcentaje en pobreza":"90"
+    },
+    {
+      "Presidente":"Años 60 y 70",
+      "Periodo":"Años 60 y 70",
+      "Porcentaje en pobreza":"70"
+    },
+    {
+      "Presidente":"Miguel de la Madrid Hurtado",
+      "Periodo":"1982-1988",
+      "Porcentaje en pobreza":"59"
+    },
+    {
+      "Presidente":"Carlos Salinas de Gortari",
+      "Periodo":"1988-1994",
+      "Porcentaje en pobreza":"21.4"
+    },
+    {
+      "Presidente":"Ernesto Zedillo Ponce de León",
+      "Periodo":"1994-2000",
+      "Porcentaje en pobreza":"38"
+    }
+  ];
+  const selector = document.getElementById("selectorPresidente");
+
+datos.forEach(item => {
+  const opcion = document.createElement("option");
+  opcion.value = item.Presidente;
+  opcion.textContent = item.Presidente;
+  selector.appendChild(opcion);
+});
+const ctx = document.getElementById('graficaPobreza');
+
+let grafica = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['Pobreza'],
+    datasets: [{
+      label: 'Porcentaje',
+      data: [21.4]
+    }]
+  }
+});
+selector.addEventListener("change", () => {
+
+  const seleccionado = datos.find(
+    d => d.Presidente === selector.value
+  );
+
+  grafica.data.datasets[0].data = [
+    parseFloat(seleccionado["Porcentaje en pobreza"])
+  ];
+
+  grafica.data.datasets[0].label =
+    seleccionado.Presidente;
+
+  grafica.update();
+
+});
