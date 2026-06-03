@@ -56,22 +56,28 @@
             </article>
 
             <article class="panel panel-dato">
-              <p class="etiqueta">Estación 1</p>
+              <p class="etiqueta">Películas producidas</p>
               <h2>Primer cambio visible</h2>
               <p>
                 Usa este panel para mostrar el primer giro de la historia: una subida, una concentración, una ausencia o una diferencia territorial.
               </p>
-              <iframe
-                src="https://graphcommons.com/graphs/241be8bd-85a2-4905-9eb2-c1b898e0e6ca"
-                allowfullscreen
-                style="width: 100%; height: 100%; border: 0; display: block; min-height: 300px;"
-                title="Graph Commons"
-              ></iframe>
+              <div class="dashboard">
+
+                <h2>Cantidad de películas por año</h2>
+              
+                <select id="selectorPelis"></select>
+              
+                <canvas id="graficaPelis"></canvas>
+              
+                <div id="detallePelis"></div>
+              
+              </div>
+              
                 <div class="visual barras" aria-hidden="true">
-                <span style="--alto: 36%"></span>
-                <span style="--alto: 54%"></span>
-                <span style="--alto: 78%"></span>
-                <span style="--alto: 48%"></span>
+                <span style="--alto: 26%"></span>
+                <span style="--alto: 44%"></span>
+                <span style="--alto: 68%"></span>
+                <span style="--alto: 38%"></span>
               </div>
             </article>
 
@@ -104,15 +110,15 @@
             </article>
 
             <article class="panel panel-cierre">
-              <p class="etiqueta">Cierre</p>
-              <h2>Dejar una conclusión</h2>
+              <p class="etiqueta">Contexto socioeconómico</p>
+              <h2>Población en pobreza</h2>
               <head><script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
               <p>
                 
                 <select id="selectorPresidente"></select>
 
 <canvas id="graficaPobreza"></canvas>
-                Cierra el recorrido con una idea que conecte todos los paneles. Explica qué cambió en la lectura después de moverse por la secuencia.
+                Dice Viesielovski que la sociedad engendra al poeta, no al revés. Por tanto, comprender la situación socioeconómica nos ayuda a explicar las preocupaciones culturales de un país. ¿Por qué hay más películas de "crítica social" que de "comedia romántica"? Esto puede darte pautas para configurar una hipótesis plausible.
               </p>
               <div class="visual cierre-visual" aria-hidden="true">
                 <span></span>
@@ -126,7 +132,7 @@
 
       <section class="nota-final">
         
-        <p class="etiqueta">Panorama general</p>
+        <p class="etiqueta">factos y lore</p>
         <h2>El chismógrafo de la</h2>
         <p>
           <h1>Presidencia de México</h1>

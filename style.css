@@ -399,4 +399,30 @@ select {
   font-size: 16px;
   color: black;
   background-color: white;
+}.dashboard{
+  max-width:900px;
+  margin:auto;
+  padding:25px;
+  background:#fff;
+  border-radius:18px;
+  box-shadow:0 8px 24px rgba(0,0,0,.08);
+}
+
+#selectorPeriodo{
+  width:100%;
+  padding:12px;
+  margin-bottom:20px;
+  border-radius:10px;
+  border:1px solid #ddd;
+  font-size:16px;
+}
+
+#graficaPeliculas{
+  margin-top:20px;
+}
+
+#detallePeriodo{
+  margin-top:20px;
+  text-align:center;
+  font-size:18px;
 }

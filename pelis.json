@@ -1,0 +1,23 @@
+
+[
+    {
+        "Presidente":"Años 50",
+        "Periodo":"Años 50",
+        "Cantidad de películas por año":"100"
+      },
+      {
+        "Presidente":"Años 60 y 70",
+        "Periodo":"Años 60 y 70",
+        "Cantidad de películas por año":"80"
+      },
+    {
+        "Presidente":"Años 80",
+        "Periodo":"1982-1988",
+        "Cantidad de películas por año":"72"
+      },
+        {
+      "Presidente":"Años 90",
+      "Periodo":"1988-1994",
+      "Cantidad de películas por año":"21"
+    }
+        ]

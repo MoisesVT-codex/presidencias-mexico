@@ -165,3 +165,118 @@ selector.addEventListener("change", () => {
   grafica.update();
 
 });
+
+const pelis = [
+  {
+    "Presidente":"Años 50",
+    "Periodo":"Años 50",
+    "Cantidad de películas por año":"100"
+  },
+  {
+    "Presidente":"Años 60 y 70",
+    "Periodo":"Años 60 y 70",
+    "Cantidad de películas por año":"80"
+  },
+  {
+    "Presidente":"Años 80",
+    "Periodo":"1982-1988",
+    "Cantidad de películas por año":"72"
+  },
+  {
+    "Presidente":"Años 90",
+    "Periodo":"1988-1994",
+    "Cantidad de películas por año":"21"
+  }
+];
+// DASHBOARD DE PELÍCULAS
+
+const selectorPelis =
+  document.getElementById("selectorPelis");
+
+const detallePelis =
+  document.getElementById("detallePelis");
+  pelis.forEach(item => {
+
+    const opcion = document.createElement("option");
+  
+    opcion.value = item.Periodo;
+    opcion.textContent = item.Periodo;
+  
+    selectorPelis.appendChild(opcion);
+  
+  });
+  const etiquetasPelis =
+  pelis.map(d => d.Periodo);
+
+const valoresPelis =
+  pelis.map(d =>
+    Number(d["Cantidad de películas por año"])
+  );
+
+const graficaPelis = new Chart(
+  document.getElementById("graficaPelis"),
+  {
+    type: "bar",
+    data: {
+      labels: etiquetasPelis,
+      datasets: [{
+        label: "Películas por año",
+        data: valoresPelis
+      }]
+    },
+    options: {
+      responsive: true
+    }
+  }
+);
+function actualizarPelis(periodoSeleccionado){
+
+  const colores = pelis.map(item =>
+    item.Periodo === periodoSeleccionado
+      ? "rgba(54,162,235,0.9)"
+      : "rgba(200,200,200,0.4)"
+  );
+
+  graficaPelis.data.datasets[0].backgroundColor =
+    colores;
+
+  graficaPelis.update();
+
+}
+selectorPelis.addEventListener("change", e => {
+
+  actualizarPelis(e.target.value);
+
+});
+actualizarPelis(pelis[0].Periodo);
+function actualizarPelis(periodoSeleccionado){
+
+  const colores = pelis.map(item =>
+    item.Periodo === periodoSeleccionado
+      ? "rgba(54,162,235,0.9)"
+      : "rgba(210,210,210,0.35)"
+  );
+
+  graficaPelis.data.datasets[0].backgroundColor =
+    colores;
+
+  graficaPelis.update();
+
+  const dato =
+    pelis.find(
+      d => d.Periodo === periodoSeleccionado
+    );
+
+  detallePelis.innerHTML = `
+    <h3>${dato.Periodo}</h3>
+    <p>
+      <strong>${dato["Cantidad de películas por año"]}</strong>
+      películas producidas por año
+    </p>
+  `;
+}
+selectorPelis.addEventListener(
+  "change",
+  e => actualizarPelis(e.target.value)
+);
+actualizarPelis(pelis[0].Periodo);
